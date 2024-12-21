@@ -96,14 +96,14 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
-	body, input, textarea, select {
-		font-family: 'Open Sans', sans-serif;
-		line-height: 1.85em;
-		color: #292727;
-		font-weight: 300;
-		font-size: 13pt;
-	}
+body {
+    background-color: #121212; /* Dark background color */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.85em;
+    color: #888;
+    font-weight: 300;
+    font-size: 13pt;
+}
 
 	a {
 		-moz-transition: color .2s ease-in-out;
@@ -1986,52 +1986,34 @@ input, select, textarea {
 
 /* Wrappers */
 
-	.wrapper {
-		background-image: url("images/bg.png");
-		box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-		padding: 8em 0 8em 0;
-		text-align: center;
-	}
+.wrapper {
+    background-color: #121212; /* Dark background color */
+    background-image: none; /* Remove background image */
+    box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    padding: 8em 0 8em 0;
+    text-align: center;
+}
 
-		.wrapper.style1 {
-			background-image: none;
-			background-color: #fff;
-		}
+.wrapper.style1 {
+    background-image: none;
+    background-color: #fff; /* White background */
+}
 
-		.wrapper.style2 {
-			background-color: #fafafa;
-			text-shadow: 1px 1px 0px #fff;
-		}
+.wrapper.style2 {
+    background-color: #fafafa; /* Light gray background */
+    text-shadow: 1px 1px 0px #fff;
+}
 
-		.wrapper.style3 {
-			background-color: #f4f4f4;
-			text-shadow: 1px 1px 0px #fff;
-		}
+.wrapper.style3 {
+    background-color: #f4f4f4; /* Light gray background */
+    text-shadow: 1px 1px 0px #fff;
+}
 
-		.wrapper.style4 {
-			background-color: #303030;
-			color: #999;
-			text-shadow: -1px -1px 0px #181818;
-		}
-
-			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
-				color: #fff;
-			}
-
-			.wrapper.style4 form input[type=text],
-			.wrapper.style4 form input[type=password],
-			.wrapper.style4 form select,
-			.wrapper.style4 form textarea {
-				border: none;
-				background: #282828;
-			}
-
-				.wrapper.style4 form input[type=text]:focus,
-				.wrapper.style4 form input[type=password]:focus,
-				.wrapper.style4 form select:focus,
-				.wrapper.style4 form textarea:focus {
-					background: #252525;
-				}
+.wrapper.style4 {
+    background-color: #303030; /* Dark gray background */
+    color: #999;
+    text-shadow: -1px -1px 0px #181818;
+}
 
 /* Nav */
 
