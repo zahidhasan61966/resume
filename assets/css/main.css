@@ -20,7 +20,6 @@ footer, header, hgroup, menu, nav, output, ruby,
 section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-
 	border: 0;
 	font-size: 100%;
 	font: inherit;
@@ -85,6 +84,7 @@ input, select, textarea {
 
 	body {
 		padding-top: 3.5em;
+		
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1530,9 +1530,9 @@ body {
 		padding: 0.75em;
 		font-size: 1em;
 		border-radius: 8px;
-		border: solid 1px #ddd;
-		background: #fff;
-		color: #bbb;
+		border: solid 1px #f0f0f0;
+		background: #979797;
+		color: #000000;
 		box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
 		width: 100%;
 	}
@@ -1911,84 +1911,169 @@ body {
 
 /* Box */
 
-	.box {
-		background: #fff;
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-		text-align: center;
-		padding: 2em;
-	}
+.box {
+    background: #fff;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2em;
+    border-radius: 10px;  /* Adjust the value to make the corners rounder */
+}
 
-		.box.style1 {
-			padding: 3em 2em 3.5em 2em;
-		}
+.box.style1 {
+    padding: 1em;
+}
 
-			.box.style1 h3 {
-				margin-bottom: 0.5em;
-			}
+.box.style1 h3 {
+    margin-bottom: 0.5em;
+}
+.box.style2 .image {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 200px;  /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+    display: block; /* Make the image behave as a block element */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto; /* Centers the image horizontally */
+}
 
-		.box.style2 h3 {
-			margin-bottom: 0.25em;
-		}
+.box.style2 h3 {
+    margin-bottom: 0.25em;
+}
 
-		.box.style2 .image {
-			position: relative;
-			left: 2em;
-			top: 2em;
-			margin: -4em 0 4em -4em;
-			width: auto;
-		}
 
+/* Flip Container */
+.flip-container {
+    perspective: 1000px;
+    width: 100%;  /* Match the size of the box */
+    height: 100%; /* Match the size of the box */
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg); /* Flip on hover */
+}
+
+/* Front and Back Faces */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side when not visible */
+    border-radius: 20px;
+}
+
+.front {
+    background: #fff;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2em;
+}
+
+.back {
+    background: #f4f4f4; /* Slightly different color for the back */
+    text-align: center;
+    padding: 2em;
+    transform: rotateY(180deg); /* Initially flipped */
+}
+
+/* Experience Container for Side-by-Side Layout */
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allows cards to wrap on smaller screens */
+    justify-content: space-between; /* Distribute the cards evenly */
+    gap: 20px;  /* Add space between cards */
+}
+
+/* General Styles for Experience Card */
+.experience-card {
+    width: 250px;  /* Shorter width */
+    height: 350px; /* Longer length */
+    margin: 20px;
+    display: inline-block;
+    perspective: 1000px;  /* Adding perspective for the 3D flip */
+}
+
+/* Back Card Responsibilities Styling */
+.back ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.back li {
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+/* Experience Image Styling */
+.experience-image {
+    width: 40px;  /* Set width of the image */
+    height: 40px; /* Set height of the image */
+    object-fit: cover;  /* Ensures the image fits within the given size */
+    margin-right: 10px;  /* Adds space between the image and the text */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+}
 /* Icons */
 
-	.icon {
-		text-decoration: none;
-		text-decoration: none;
-	}
+.icon {
+    text-decoration: none;
+}
 
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
 
-		.icon:before {
-			font-size: 1.25em;
-		}
+.icon:before {
+    font-size: 1em;  /* Reduced font size */
+    color: #555;  /* Changed color to a darker shade */
+}
 
-		.icon > .label {
-			display: none;
-		}
+.icon > .label {
+    display: none;
+}
 
-		.icon.solid:before {
-			font-weight: 900;
-		}
+.icon.solid:before {
+    font-weight: 900;
+}
 
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
-		}
+.icon.brands:before {
+    font-family: 'Font Awesome 5 Brands';
+}
 
-		.icon.featured {
-			color: #EA8A95;
-			display: block;
-			margin: 0 0 1.5em 0;
-			cursor: default;
-		}
+.icon.featured {
+    color: #0f03f9;  /* You can change this to another color */
+    display: block;
+    margin: 0 0 1.5em 0;
+    cursor: default;
+}
 
-			.icon.featured:before {
-				font-size: 6em;
-			}
+.icon.featured:before {
+    font-size: 5em;  /* Reduced the font size of the featured icon */
+}
 
 /* Wrappers */
 
 .wrapper {
-    background-color: #121212; /* Dark background color */
+    background-color: #ffffff; /* Dark background color */
     background-image: none; /* Remove background image */
     box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
     padding: 8em 0 8em 0;
@@ -1997,16 +2082,16 @@ body {
 
 .wrapper.style1 {
     background-image: none;
-    background-color: #fff; /* White background */
+    background-color: #000000; /* White background */
 }
 
 .wrapper.style2 {
-    background-color: #fafafa; /* Light gray background */
-    text-shadow: 1px 1px 0px #fff;
+    background-color: #ffffff; /* Light gray background */
+    text-shadow: 1px 1px 0px #ffffff;
 }
 
 .wrapper.style3 {
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #b5b4b4; /* Light gray background */
     text-shadow: 1px 1px 0px #fff;
 }
 
